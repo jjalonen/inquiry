@@ -1,8 +1,5 @@
 package fi.haagahelia.MoodelInquiry;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -22,7 +19,7 @@ public class MoodelInquiryApplication {
 	}
 	
 	@Bean 
-	public CommandLineRunner questionData(QuestionRepository QRepo, AnwserRepository ARepo) {
+	public CommandLineRunner questionData(QuestionRepository QRepo, AnswerRepository ARepo) {
 		return (args)-> {		
 			log.info("save some questions");
 			String openAnswer = "open anwser";

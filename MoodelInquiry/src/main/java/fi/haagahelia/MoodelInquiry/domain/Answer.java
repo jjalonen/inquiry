@@ -3,7 +3,7 @@ package fi.haagahelia.MoodelInquiry.domain;
 import javax.persistence.*;
 
 @Entity
-public class Anwser {
+public class Answer {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -13,11 +13,11 @@ public class Anwser {
 	@JoinColumn(name = "id")
 	private Long questionId;
 	
-	public Anwser() {}
+	public Answer() {}
 	
-	public Anwser(String anwser) {
+	public Answer(String answer) {
 		super();
-		this.answer = anwser;
+		this.answer = answer;
 	}
 
 	public String getAnswer() {
