@@ -1,6 +1,11 @@
 package fi.haagahelia.MoodelInquiry.domain;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Question {
@@ -8,21 +13,26 @@ public class Question {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
 	private String question;
-	private QuestionType questiontype;
+	
+	@ManyToOne
+	@JsonIgnore
+	private List<QuestionType> types;
 	
 	public Question() {}
 	
-	public Question(String question, String type) {
+	public Question(String question, QuestionType type) {
 		super();
 		this.question = question;
+		types = new ArrayList<>();
+		types.add(type);
+	}
+	
+	public List<QuestionType> getTypes() {
+		return types;
 	}
 
-	public QuestionType getQuestiontype() {
-		return questiontype;
-	}
-
-	public void setQuestiontype(QuestionType questiontype) {
-		this.questiontype = questiontype;
+	public void setTypes(List<QuestionType> types) {
+		this.types = types;
 	}
 
 	public long getId() {

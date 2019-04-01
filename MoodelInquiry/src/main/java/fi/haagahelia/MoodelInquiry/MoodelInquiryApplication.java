@@ -25,8 +25,19 @@ public class MoodelInquiryApplication {
 	public CommandLineRunner questionData(QuestionRepository QRepo, AnwserRepository ARepo) {
 		return (args)-> {		
 			log.info("save some questions");
-			String openAnswer = "open anwser";
-			QRepo.save(new Question("1insert question here", openAnswer));		
+
+			QuestionType type = new QuestionType();
+			type.setOpenAnswer("Open");
+			
+			QuestionType type2 = new QuestionType();
+			List<String> multiple = new ArrayList<>();
+			multiple.add("yksi");
+			multiple.add("kaksi");
+			
+			type2.setMultipleAnswer(multiple);
+			
+			QRepo.save(new Question("1insert question here", type));		
+			QRepo.save(new Question("2insert question here", type2));	
 		};
 	}
 
