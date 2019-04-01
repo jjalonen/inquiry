@@ -1,5 +1,8 @@
 package fi.haagahelia.MoodelInquiry;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -7,8 +10,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import fi.haagahelia.MoodelInquiry.domain.QuestionRepository;
-import fi.haagahelia.MoodelInquiry.domain.Question;
+import fi.haagahelia.MoodelInquiry.domain.*;
 
 @SpringBootApplication
 public class MoodelInquiryApplication {
@@ -20,11 +22,11 @@ public class MoodelInquiryApplication {
 	}
 	
 	@Bean 
-	public CommandLineRunner questionData(QuestionRepository QRepo) {
+	public CommandLineRunner questionData(QuestionRepository QRepo, AnwserRepository ARepo) {
 		return (args)-> {		
 			log.info("save some questions");
-			QRepo.save(new Question("1insert question here", "1insert answer here"));
-			QRepo.save(new Question("2insert question here", "2insert answer here"));			
+			String openAnswer = "open anwser";
+			QRepo.save(new Question("1insert question here", openAnswer));		
 		};
 	}
 

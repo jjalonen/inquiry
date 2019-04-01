@@ -1,24 +1,28 @@
 package fi.haagahelia.MoodelInquiry.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Question {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
-	private String questionText;
-	private String questionAnswer;
+	private String question;
+	private QuestionType questiontype;
 	
 	public Question() {}
 	
-	public Question(String questionText, String questionAnswer) {
+	public Question(String question, String type) {
 		super();
-		this.questionText = questionText;
-		this.questionAnswer = questionAnswer;
+		this.question = question;
+	}
+
+	public QuestionType getQuestiontype() {
+		return questiontype;
+	}
+
+	public void setQuestiontype(QuestionType questiontype) {
+		this.questiontype = questiontype;
 	}
 
 	public long getId() {
@@ -29,24 +33,16 @@ public class Question {
 		this.id = id;
 	}
 
-	public String getQuestionText() {
-		return questionText;
+	public String getQuestion() {
+		return question;
 	}
 
-	public void setQuestionText(String questionText) {
-		this.questionText = questionText;
-	}
-
-	public String getQuestionAnswer() {
-		return questionAnswer;
-	}
-
-	public void setQuestionAnswer(String questionAnswer) {
-		this.questionAnswer = questionAnswer;
+	public void setQuestion(String question) {
+		this.question = question;
 	}
 
 	@Override
 	public String toString() {
-		return "Question [id=" + id + ", questionText=" + questionText + ", questionAnswer=" + questionAnswer + "]";
+		return "Question [id=" + id + ", question=" + question + "]";
 	}
 }
