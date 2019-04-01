@@ -9,15 +9,14 @@ import javax.persistence.Id;
 public class Question {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private long id;
+	private Long id;
 	private String questionText;
 	private String questionAnswer;
 	
 	public Question() {}
 	
-	public Question(long id, String questionText, String questionAnswer) {
-		
-		this.id = id;
+	public Question(String questionText, String questionAnswer) {
+		super();
 		this.questionText = questionText;
 		this.questionAnswer = questionAnswer;
 	}

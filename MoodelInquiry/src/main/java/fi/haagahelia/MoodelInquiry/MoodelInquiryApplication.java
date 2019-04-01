@@ -21,19 +21,10 @@ public class MoodelInquiryApplication {
 	
 	@Bean 
 	public CommandLineRunner questionData(QuestionRepository QRepo) {
-		return (args)-> {
-			
+		return (args)-> {		
 			log.info("save some questions");
-			QRepo.save(new Question(0, "1insert question here", "1insert answer here"));
-			QRepo.save(new Question(0, "2insert question here", "2insert answer here"));
-			
-			log.info("fetch questions");
-			for(Question question : QRepo.findAll()) {
-				log.info(question.toString());
-			}
-			
-			
-			
+			QRepo.save(new Question("1insert question here", "1insert answer here"));
+			QRepo.save(new Question("2insert question here", "2insert answer here"));			
 		};
 	}
 

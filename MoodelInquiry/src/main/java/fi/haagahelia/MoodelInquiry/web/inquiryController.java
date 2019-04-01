@@ -17,9 +17,8 @@ public class inquiryController {
 	@Autowired
 	private QuestionRepository QRepo;
 	
-	
 	//Show everything as JSON
-	@RequestMapping(value="/", method = RequestMethod.GET)
+	@RequestMapping(value="/questions", method = RequestMethod.GET)
 	public @ResponseBody List<Question> questionsREST() {
 		return (List<Question>) QRepo.findAll();
 	}
