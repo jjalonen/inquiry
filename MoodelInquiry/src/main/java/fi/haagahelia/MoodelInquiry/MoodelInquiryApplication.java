@@ -23,18 +23,11 @@ public class MoodelInquiryApplication {
 		return (args)-> {		
 			log.info("save some questions");
 
-			QuestionType type = new QuestionType();
-			type.setOpenAnswer("Open");
+			QRepo.save(new Question("QUESTION 1", "Select"));		
+			QRepo.save(new Question("QUESTION 2", "Open text"));	
 			
-			QuestionType type2 = new QuestionType();
-			List<String> multiple = new ArrayList<>();
-			multiple.add("yksi");
-			multiple.add("kaksi");
-			
-			type2.setMultipleAnswer(multiple);
-			
-			QRepo.save(new Question("1insert question here", type));		
-			QRepo.save(new Question("2insert question here", type2));	
+			ARepo.save(new Answer("ANSWER 1"));
+			ARepo.save(new Answer("ANSWER 2"));
 		};
 	}
 

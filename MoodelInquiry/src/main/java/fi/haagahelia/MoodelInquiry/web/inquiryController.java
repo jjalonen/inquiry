@@ -17,10 +17,17 @@ public class inquiryController {
 	@Autowired
 	private QuestionRepository QRepo;
 	
-	//Show everything as JSON
+	@Autowired
+	private AnswerRepository Arepo;
+	
 	@RequestMapping(value="/questions", method = RequestMethod.GET)
 	public @ResponseBody List<Question> questionsREST() {
 		return (List<Question>) QRepo.findAll();
+	}
+	
+	@RequestMapping(value="/answers", method = RequestMethod.GET)
+	public @ResponseBody List<Answer> answersREST() {
+		return (List<Answer>) Arepo.findAll();
 	}
 	
 	@RequestMapping(value="/add/question", method = RequestMethod.POST)

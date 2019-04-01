@@ -9,8 +9,8 @@ public class Answer {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String answer;
-	
-	@JoinColumn(name = "id")
+
+	//TODO
 	private Long questionId;
 	
 	public Answer() {}
