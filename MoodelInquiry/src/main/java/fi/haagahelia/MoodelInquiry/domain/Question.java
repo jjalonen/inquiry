@@ -2,9 +2,12 @@ package fi.haagahelia.MoodelInquiry.domain;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 @Entity
 public class Question {
 	@Id
+	@JsonView
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
 	private String question, type;
