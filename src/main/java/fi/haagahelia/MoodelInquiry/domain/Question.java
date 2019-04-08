@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonView;
 public class Question {
 	@Id
 	@JsonView
+	@Column(name = "questionId")
 	private Long id;
 	private String question, type;
 	

@@ -10,7 +10,7 @@ public class Answer {
 	private Long id;
 	private String answer;
 	
-	//TODO
+	@JoinColumn(name = "questionId")
 	private Long questionId;
 	
 	public Answer() {}

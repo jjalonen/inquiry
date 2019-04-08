@@ -25,6 +25,11 @@ public class MoodelInquiryApplication {
 
 			QRepo.save(new Question(Long.valueOf(1) ,"QUESTION 1", "Select"));		
 			QRepo.save(new Question(Long.valueOf(2) ,"QUESTION 2", "Open text"));	
+			QRepo.save(new Question(Long.valueOf(3) ,"QUESTION 3", "Radio"));	
+			
+			ARepo.save(new Answer("Pretty good", Long.valueOf(1)));		
+			ARepo.save(new Answer("Terrible", Long.valueOf(1)));	
+			ARepo.save(new Answer("Awesome", Long.valueOf(2)));	
 			
 		};
 	}
