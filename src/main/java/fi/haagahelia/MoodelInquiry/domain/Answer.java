@@ -10,15 +10,15 @@ public class Answer {
 	private Long id;
 	private String answer;
 	
-
 	//TODO
 	private Long questionId;
 	
 	public Answer() {}
 	
-	public Answer(String answer) {
+	public Answer(String answer, Long questionId) {
 		super();
 		this.answer = answer;
+		this.questionId = questionId;
 	}
 
 	public String getAnswer() {

@@ -23,11 +23,9 @@ public class MoodelInquiryApplication {
 		return (args)-> {		
 			log.info("save some questions");
 
-			QRepo.save(new Question("QUESTION 1", "Select"));		
-			QRepo.save(new Question("QUESTION 2", "Open text"));	
+			QRepo.save(new Question(Long.valueOf(1) ,"QUESTION 1", "Select"));		
+			QRepo.save(new Question(Long.valueOf(2) ,"QUESTION 2", "Open text"));	
 			
-			ARepo.save(new Answer("ANSWER 1"));
-			ARepo.save(new Answer("ANSWER 2"));
 		};
 	}
 
