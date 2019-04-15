@@ -1,5 +1,8 @@
 package fi.haagahelia.MoodelInquiry;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -21,11 +24,15 @@ public class MoodelInquiryApplication {
 	@Bean 
 	public CommandLineRunner questionData(QuestionRepository QRepo, AnswerRepository ARepo) {
 		return (args)-> {		
-			log.info("save some questions");
+			log.info("save some questions and answers");
+			List<String> responseOptions = new ArrayList<>();
+			responseOptions.add("hyvä");
+			responseOptions.add("ihan ok");
+			responseOptions.add("huono");
 
-			QRepo.save(new Question(Long.valueOf(1) ,"QUESTION 1", "Select"));		
-			QRepo.save(new Question(Long.valueOf(2) ,"QUESTION 2", "Open text"));	
-			QRepo.save(new Question(Long.valueOf(3) ,"QUESTION 3", "Radio"));	
+			QRepo.save(new Question(Long.valueOf(1) ,"QUESTION 1", "Open text", null ));		
+			QRepo.save(new Question(Long.valueOf(2) ,"QUESTION 2", "Radio", responseOptions));	
+			QRepo.save(new Question(Long.valueOf(3) ,"QUESTION 3", "Select", responseOptions ));	
 			
 			ARepo.save(new Answer("Pretty good", Long.valueOf(1)));		
 			ARepo.save(new Answer("Terrible", Long.valueOf(1)));	

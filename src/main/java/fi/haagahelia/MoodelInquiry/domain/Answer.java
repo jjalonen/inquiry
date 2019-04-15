@@ -10,7 +10,7 @@ public class Answer {
 	private Long id;
 	private String answer;
 	
-	@JoinColumn(name = "questionId")
+	@JoinColumn(name = "questionId", nullable = false)
 	private Long questionId;
 	
 	public Answer() {}
