@@ -48,5 +48,8 @@ public class inquiryController {
 	public void addQuestion(@RequestBody Question question) {
 		QRepo.save(question);
 	}
-
+	@RequestMapping(value="/add/answer", method = RequestMethod.POST)
+	public void addAnswer(@RequestBody Answer answer) {
+		Arepo.save(answer);
+	}
 }
