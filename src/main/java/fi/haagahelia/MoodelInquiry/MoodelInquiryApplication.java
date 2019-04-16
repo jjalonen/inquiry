@@ -40,7 +40,7 @@ public class MoodelInquiryApplication {
 
 			QRepo.save(new Question(Long.valueOf(1) ,"Minkä vuoden opiskelija olet?", "Radio", question1ResponseOptions ));		
 			QRepo.save(new Question(Long.valueOf(2) ,"Mikä on koulutusalasi?", "Select", responseOptions));	
-			QRepo.save(new Question(Long.valueOf(3) ,"Miten moodle toimii mielstäsi?", "Open text", null ));	
+			QRepo.save(new Question(Long.valueOf(3) ,"Miten moodle toimii mielestäsi?", "Open text", null ));	
 			
 			ARepo.save(new Answer("Pretty good", Long.valueOf(1)));		
 			ARepo.save(new Answer("Terrible", Long.valueOf(1)));	
