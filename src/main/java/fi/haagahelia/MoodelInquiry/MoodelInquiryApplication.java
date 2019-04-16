@@ -26,13 +26,21 @@ public class MoodelInquiryApplication {
 		return (args)-> {		
 			log.info("save some questions and answers");
 			List<String> responseOptions = new ArrayList<>();
-			responseOptions.add("hyvä");
-			responseOptions.add("ihan ok");
-			responseOptions.add("huono");
+			responseOptions.add("Finanssi- ja talousasiantuntiakoulutus, tradenomi (AMK)");
+			responseOptions.add("Hotelli- ja ravintola-alan liikkeenjohdon koulutus, restonomi (AMK)");
+//			responseOptions.add("huono");
+			
+			List<String> question1ResponseOptions = new ArrayList<>();
+			question1ResponseOptions.add("1.vuoden");
+			question1ResponseOptions.add("2.vuoden");
+			question1ResponseOptions.add("3.vuoden");
+			question1ResponseOptions.add("4.vuoden");
+			question1ResponseOptions.add("5.vuoden");
+			
 
-			QRepo.save(new Question(Long.valueOf(1) ,"QUESTION 1", "Open text", null ));		
-			QRepo.save(new Question(Long.valueOf(2) ,"QUESTION 2", "Radio", responseOptions));	
-			QRepo.save(new Question(Long.valueOf(3) ,"QUESTION 3", "Select", responseOptions ));	
+			QRepo.save(new Question(Long.valueOf(1) ,"Minkä vuoden opiskelija olet?", "Radio", question1ResponseOptions ));		
+			QRepo.save(new Question(Long.valueOf(2) ,"Mikä on koulutusalasi?", "Select", responseOptions));	
+			QRepo.save(new Question(Long.valueOf(3) ,"Miten moodle toimii mielstäsi?", "Open text", null ));	
 			
 			ARepo.save(new Answer("Pretty good", Long.valueOf(1)));		
 			ARepo.save(new Answer("Terrible", Long.valueOf(1)));	
