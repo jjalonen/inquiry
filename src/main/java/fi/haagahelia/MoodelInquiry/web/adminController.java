@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import fi.haagahelia.MoodelInquiry.domain.AnswerRepository;
 import fi.haagahelia.MoodelInquiry.domain.Question;
 import fi.haagahelia.MoodelInquiry.domain.QuestionRepository;
+import fi.haagahelia.MoodelInquiry.domain.QuestionTypeRepository;
 
 @Controller
 public class adminController {
@@ -20,6 +21,9 @@ public class adminController {
 	@Autowired
 	private AnswerRepository aRepository;
 	
+	@Autowired
+	private QuestionTypeRepository typeRepository;
+	
 	@RequestMapping(value="/questionList")
 	public String questionList (Model model) {
 		model.addAttribute("questions", qRepository.findAll());
@@ -29,6 +33,7 @@ public class adminController {
 	@RequestMapping(value="/add")
 	public String add (Model model) {
 		model.addAttribute("question", new Question());
+		model.addAttribute("types", typeRepository.findAll());
 		return "/addQuestion";
 	}
 	
@@ -47,6 +52,7 @@ public class adminController {
 	@RequestMapping(value="/edit/{id}", method= RequestMethod.GET)
 	public String editQuestion(@PathVariable("id")Long id, Model model) {
 	model.addAttribute("question", qRepository.findById(id));
+	model.addAttribute("types", typeRepository.findAll());
 	return "edit";
 }
 
