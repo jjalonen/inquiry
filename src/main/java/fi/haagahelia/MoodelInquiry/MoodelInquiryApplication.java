@@ -11,8 +11,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 import fi.haagahelia.MoodelInquiry.domain.*;
-import fi.haagahelia.MoodelInquiry.domain.User;
-import fi.haagahelia.MoodelInquiry.domain.UserRepository;
 
 @SpringBootApplication
 public class MoodelInquiryApplication {
@@ -49,7 +47,7 @@ public class MoodelInquiryApplication {
 			ARepo.save(new Answer("Awesome", Long.valueOf(2)));	
 			
 			log.info("One user to rule them all");
-			User userAdmin = new User("admin", "$2a$10$0MMwY.IQqpsVc1jC8u7IJ.2rT8b0Cd3b3sfIBGV2zfgnPGtT4r0.C", "ADMIN");
+			Kayttaja userAdmin = new Kayttaja("admin", "$2a$10$0MMwY.IQqpsVc1jC8u7IJ.2rT8b0Cd3b3sfIBGV2zfgnPGtT4r0.C", "ADMIN");
 			urepository.save(userAdmin);
 		};
 	}
