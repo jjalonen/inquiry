@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import fi.haagahelia.MoodelInquiry.domain.*;
 
 @Controller
-@CrossOrigin
 public class inquiryController {
 	
 	@Autowired
