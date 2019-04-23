@@ -19,13 +19,21 @@
 				<th>ID</th>
 				<th>Question</th>
 				<th>Question type</th>
+				<th> </th>
+				<th> </th>
 			</tr>
 			<tr th:each="question : ${questions}">
 				<td th:text="${question.id}"></td>
 				<td th:text="${question.question}"></td>
 				<td th:text="${question.questionType}"></td>
+				<td><a th:href="@{/edit/{id}(id=${question.id})}" class="edit" method="get"></a></td>
+				<td><a th:href="@{/delete/{id}(id=${question.id})}" class="delete" method="get"></a></td>
+				
 			</tr>
 		</table>
 	</div>
+	<div class="addbtn">
+			<a th:href="@{/add}" class="btn btn-success"></a>
+		</div>
 </body>
 </html>
