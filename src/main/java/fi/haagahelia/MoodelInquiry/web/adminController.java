@@ -17,7 +17,7 @@ public class adminController {
 	@Autowired
 	private AnswerRepository aRepository;
 	
-	@RequestMapping(value="/questionList")
+	@RequestMapping(value="/questionlist")
 	public String questionList (Model model) {
 		model.addAttribute("questions", qRepository.findAll());
 		return "questionList";
