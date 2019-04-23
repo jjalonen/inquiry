@@ -13,7 +13,10 @@ public class Question {
 	@Column(name = "questionId")
 	private Long id;
 	private String question;
-	private String questionType;
+	
+	@ManyToOne
+	@JoinColumn(name = "typeId")
+	private QuestionType questionType;
 	@ElementCollection
 	@JsonView
 	private List<String> responseOptions;
@@ -21,7 +24,7 @@ public class Question {
 	
 	public Question() {}
 	
-	public Question(Long id, String question, String questionType,  List<String> responseOptions) {
+	public Question(Long id, String question, QuestionType questionType,  List<String> responseOptions) {
 		super();
 		this.id = id;
 		this.question = question;
@@ -29,11 +32,11 @@ public class Question {
 		this.responseOptions = responseOptions;
 	}
 
-	public String getQuestionType() {
+	public QuestionType getQuestionType() {
 		return questionType;
 	}
 
-	public void setQuestionType(String questionType) {
+	public void setQuestionType(QuestionType questionType) {
 		this.questionType = questionType;
 	}
 

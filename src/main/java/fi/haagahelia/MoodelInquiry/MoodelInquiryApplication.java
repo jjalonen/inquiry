@@ -29,8 +29,8 @@ public class MoodelInquiryApplication {
 			List<String> responseOptions = new ArrayList<>();
 			responseOptions.add("Finanssi- ja talousasiantuntiakoulutus, tradenomi (AMK)");
 			responseOptions.add("Hotelli- ja ravintola-alan liikkeenjohdon koulutus, restonomi (AMK)");
-			
-			questionTypeRepository.save(new QuestionType("Radio Button"));
+
+			questionTypeRepository.save(new QuestionType("Radio"));
 			questionTypeRepository.save(new QuestionType("Open Text"));
 			questionTypeRepository.save(new QuestionType("Select"));
 
@@ -41,10 +41,12 @@ public class MoodelInquiryApplication {
 			question1ResponseOptions.add("4.vuoden");
 			question1ResponseOptions.add("5.vuoden");
 
-			QRepo.save(
-					new Question(Long.valueOf(1), "Minkä vuoden opiskelija olet?", "Radio", question1ResponseOptions));
-			QRepo.save(new Question(Long.valueOf(2), "Mikä on koulutusalasi?", "Select", responseOptions));
-			QRepo.save(new Question(Long.valueOf(3), "Miten moodle toimii mielestäsi?", "Open text", null));
+			QRepo.save(new Question(Long.valueOf(1), "Minkä vuoden opiskelija olet?",
+					questionTypeRepository.findByType("Radio").get(0), question1ResponseOptions));
+			QRepo.save(new Question(Long.valueOf(2), "Mikä on koulutusalasi?",
+					questionTypeRepository.findByType("Select").get(0), responseOptions));
+			QRepo.save(new Question(Long.valueOf(3), "Miten moodle toimii mielestäsi?",
+					questionTypeRepository.findByType("Open Text").get(0), null));
 
 			ARepo.save(new Answer("Pretty good", Long.valueOf(1)));
 			ARepo.save(new Answer("Terrible", Long.valueOf(1)));
