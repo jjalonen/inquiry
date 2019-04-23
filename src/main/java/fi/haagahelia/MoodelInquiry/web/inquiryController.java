@@ -23,22 +23,22 @@ public class inquiryController {
 	@Autowired
 	private AnswerRepository Arepo;
 	
-	@RequestMapping(value="/questions", method = RequestMethod.GET)
+	@RequestMapping(value="/open/questions", method = RequestMethod.GET)
 	public @ResponseBody List<Question> GetQuestionsREST() {
 		return (List<Question>) QRepo.findAll();
 	}
 	
-	@RequestMapping(value="/question/{id}", method = RequestMethod.GET)
+	@RequestMapping(value="/open/question/{id}", method = RequestMethod.GET)
 	public @ResponseBody Optional<Question> GetQuestionByIdREST(@PathVariable("id") Long questionId) {
 		return  QRepo.findById(questionId);
 	}
 	
-	@RequestMapping(value="/answers", method = RequestMethod.GET)
+	@RequestMapping(value="/open/answers", method = RequestMethod.GET)
 	public @ResponseBody List<Answer> GetAnswersREST() {
 		return (List<Answer>) Arepo.findAll();
 	}
 	
-	@RequestMapping(value="/answer/{id}", method = RequestMethod.GET)
+	@RequestMapping(value="/open/answer/{id}", method = RequestMethod.GET)
 	public @ResponseBody List<Answer> GetAnswersByQuestionIdREST(@PathVariable("id") Long questionId) {
 		return (List<Answer>) Arepo.findByQuestionId(questionId);
 	}
@@ -47,7 +47,7 @@ public class inquiryController {
 	public void addQuestion(@RequestBody Question question) {
 		QRepo.save(question);
 	}
-	@RequestMapping(value="/add/answer", method = RequestMethod.POST)
+	@RequestMapping(value="/open/add/answer", method = RequestMethod.POST)
 	public void addAnswer(@RequestBody Answer answer) {
 		Arepo.save(answer);
 	}
