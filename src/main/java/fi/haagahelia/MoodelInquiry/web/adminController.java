@@ -22,4 +22,8 @@ public class adminController {
 		model.addAttribute("questions", qRepository.findAll());
 		return "questionList";
 	}
+	@RequestMapping(value="/login")
+	public String login() {
+		return "login";
+	}
 }
