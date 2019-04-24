@@ -14,12 +14,16 @@
         	<div class="col-md-6 col-md-offset-3">
 			<h3>add question</h3>
 				<form th:object="${question}" th:action="@{save}" action="#" method="post">
+				
+					<label for="id">Question ID</label>
+					<input type="text" id="id" th:field="*{id}" class="form-control"/>
+				
 					<label for="question">Question</label>
 					<input type="text" id="question" th:field="*{question}" class="form-control"/>
 					
 					<label for="type">Type</label>
 					<select class="form-control" id="type" th:field="*{questionType}" >
-						<option th:each="questionType : ${questionTypes}" th:value="${questionType.typeId}" th:text="${questionType.type}"></option>
+						<option th:each="questionType : ${types}" th:value="${questionType.typeId}" th:text="${questionType.type}"></option>
 					</select>
 					
 					<div class="save">
