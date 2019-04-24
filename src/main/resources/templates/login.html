@@ -12,16 +12,16 @@ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <body>
 	
 	<div class ="signin">
-	
-		<div th:if="${param.error}">
-			Invalid username and password.
-		</div>
-		<div th:if="${param.logout}">
-            You have been logged out.
-        </div>
+		<div class="container login-container">
+		 	<div class="col-md-6 login-form">	
+		 	
+				<div th:if="${param.error}">
+					Invalid username and password.
+				</div>
+				<div th:if="${param.logout}">
+		            You have been logged out.
+		        </div>
         
-        <div class="container login-container">
-		 <div class="col-md-6 login-form">
 		 	<h3>Admin Login</h3>
 				<form th:action="@{/login}" method="post">
 					<div class="form-group"><input type="text" class="form-control" name="username" placeholder="Username" /></div>
