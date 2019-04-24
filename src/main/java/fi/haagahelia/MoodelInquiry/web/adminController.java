@@ -34,7 +34,7 @@ public class adminController {
 	public String add (Model model) {
 		model.addAttribute("question", new Question());
 		model.addAttribute("types", typeRepository.findAll());
-		return "/addQuestion";
+		return "addQuestion";
 	}
 	
 	@RequestMapping(value="/save", method = RequestMethod.POST)
