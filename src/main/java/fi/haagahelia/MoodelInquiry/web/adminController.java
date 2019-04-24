@@ -52,6 +52,7 @@ public class adminController {
 	@RequestMapping(value="/edit/{id}", method= RequestMethod.GET)
 	public String editQuestion(@PathVariable("id")Long id, Model model) {
 	model.addAttribute("question", qRepository.findById(id));
+	model.addAttribute("responseOptions", qRepository.findById(id).get().getResponseOptions());
 	model.addAttribute("types", typeRepository.findAll());
 	return "edit";
 }
