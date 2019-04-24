@@ -18,13 +18,21 @@
 					<label for="id">Question ID</label>
 					<input type="text" id="id" th:field="*{id}" class="form-control"/>
 				
-					<label for="question">Question</label>
-					<input type="text" id="question" th:field="*{question}" class="form-control"/>
+					<label for="questionText">Question</label>
+					<input type="text" id="questionText" th:field="*{questionText}" class="form-control"/>
 					
 					<label for="type">Type</label>
 					<select class="form-control" id="type" th:field="*{questionType}" >
 						<option th:each="questionType : ${types}" th:value="${questionType.typeId}" th:text="${questionType.type}"></option>
 					</select>
+					
+					<label for="responseOptions">Response Options</label>
+					<input type="text" id="responseOptions" th:field="*{responseOptions}" class="form-control"/>
+					<input type="text" id="responseOptions" th:field="*{responseOptions}" class="form-control"/>
+					<input type="text" id="responseOptions" th:field="*{responseOptions}" class="form-control"/>
+					<input type="text" id="responseOptions" th:field="*{responseOptions}" class="form-control"/>
+					<input type="text" id="responseOptions" th:field="*{responseOptions}" class="form-control"/>
+					
 					
 					<div class="save">
 						<button type="submit" class="btn btn-primary">Save</button>
