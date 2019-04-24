@@ -26,7 +26,7 @@
 				<td th:text="${question.id}"></td>
 				<td th:text="${question.question}"></td>
 				<td th:text="${question.questionType.type}"></td>
-				<td><a th:href="@{/edit/{id}(id=${question.id})}" class="btn-success edit" method="get">Edit</a></td>
+				<td><a th:href="@{/edit/{id}(id=${question.id})}" class="btn btn-success edit" method="get">Edit</a></td>
 				<td><a th:href="@{/delete/{id}(id=${question.id})}" class="btn btn-danger delete" method="get">Delete</a></td>
 				
 			</tr>
