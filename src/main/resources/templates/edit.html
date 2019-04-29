@@ -7,7 +7,7 @@
 <head>
 	<link type="text/css" rel="stylesheet" href="/css/edit.css" th:href="@{css/edit.css}" />
 	<meta charset="ISO-8859-1" content="text/html; charset=UTF-8" />
-	<title>titties</title>
+	<title>Edit Question</title>
 </head>
 <body>
 	<div class="add">
@@ -28,14 +28,9 @@
 						<option th:each="questionType : ${types}" th:value="${questionType.typeId}" th:text="${questionType.type}"></option>
 					</select>
 					
-				<table class="table table-stripped">
-				<tr th:each="responseOption : ${responseOptions}">
-					<td th:text="${responseOption}"><td>
-				</tr>
-				</table>
-					
-		
-					
+					<label for="responseOptions">Response Options</label>
+					<input type="text" id="responseOptions" th:field="*{responseOptions}" class="form-control"/>
+										
 					<div class="save">
 						<button type="submit" class="btn btn-primary">Save</button>
 					</div>
