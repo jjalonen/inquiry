@@ -4,6 +4,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -15,7 +16,6 @@ import fi.haagahelia.MoodelInquiry.domain.Question;
 import fi.haagahelia.MoodelInquiry.domain.QuestionRepository;
 import fi.haagahelia.MoodelInquiry.domain.QuestionTypeRepository;
 
-
 @RunWith(SpringRunner.class)
 @DataJpaTest
 public class QuestionRepositoryTEST {
@@ -26,8 +26,6 @@ public class QuestionRepositoryTEST {
 	@Autowired
 	private QuestionTypeRepository QTRepo;
 	
-	
-	
 	@Test 
 	public void addNewQuestion() {
 		
@@ -35,9 +33,9 @@ public class QuestionRepositoryTEST {
 		question1ResponseOptions.add("lyllikki");
 		question1ResponseOptions.add("make");
 		
-		Question question = new Question (Long.valueOf(1), "Mikä on nimesi?", QTRepo.findByType("Radio").get(0), question1ResponseOptions);
+		Question question = new Question (Long.valueOf(10), "Mikä on nimesi?", QTRepo.findByType("Radio").get(0), question1ResponseOptions);
 		QRepo.save(question);
-		
-		assertThat(question.getId()).isNotNull();
+		Optional<Question> savedQuestion = QRepo.findById(Long.valueOf(10));
+		assertThat(savedQuestion.get().getId()).isNotNull();
 	}
 }
