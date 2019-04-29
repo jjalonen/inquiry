@@ -1,8 +1,12 @@
 @charset "ISO-8859-1";
 
 .signin {
-   margin: auto;
-  
+   position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -100px;
+ 
 }
 .login-container{
     margin-top: 5%;
