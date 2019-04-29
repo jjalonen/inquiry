@@ -1,7 +1,8 @@
 @charset "ISO-8859-1";
 
 .signin {
-   margin-top: 30%; 
+   margin: auto;
+  
 }
 .login-container{
     margin-top: 5%;
