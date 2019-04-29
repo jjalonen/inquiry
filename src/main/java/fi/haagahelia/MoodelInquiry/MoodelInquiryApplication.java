@@ -27,8 +27,19 @@ public class MoodelInquiryApplication {
 		return (args) -> {
 			log.info("save some questions and answers and questionType");
 			List<String> responseOptions = new ArrayList<>();
-			responseOptions.add("Finanssi- ja talousasiantuntiakoulutus, tradenomi (AMK)");
-			responseOptions.add("Hotelli- ja ravintola-alan liikkeenjohdon koulutus, restonomi (AMK)");
+			responseOptions.add("Finanssi- ja talousasiantuntiakoulutus tradenomi (AMK)");
+			responseOptions.add("Hotelli- ja ravintola-alan liikkeenjohdon koulutus restonomi (AMK)");
+			responseOptions.add("Johdon assistenttityön ja kielten koulutus tradenomi(AMK)");
+			responseOptions.add("Journalismikoulutus, medianomi(AMK)");
+			responseOptions.add("Liiketalouden koulutus tradenomi(AMK)");
+			responseOptions.add("Liikunnan ja vapaa-ajan koulutus liikunnanohjaaja(AMK)");
+			responseOptions.add("Matkailun koulutus restonomi(AMK)");
+			responseOptions.add("Matkailun liikkeenjohdon koulutus(AMK)");
+			responseOptions.add("Myynnin ja visuaalisen markkinoinnin koulutus tradenomi(AMK)");
+			responseOptions.add("Myyntityön koulutus tradenomi(AMK)");
+			responseOptions.add("Ruokatuotannon johtamisen koulutus restonomi(AMK)");
+			responseOptions.add("Tietojenkäsittelyn koulutus tradenomi (AMK)");
+			responseOptions.add("Englanninkieliset amk-tutkinnot");
 
 			questionTypeRepository.save(new QuestionType("Radio"));
 			questionTypeRepository.save(new QuestionType("Open Text"));
