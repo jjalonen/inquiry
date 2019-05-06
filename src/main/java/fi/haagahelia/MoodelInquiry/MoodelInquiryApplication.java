@@ -59,9 +59,9 @@ public class MoodelInquiryApplication {
 			QRepo.save(new Question(Long.valueOf(3), "Miten moodle toimii mielestäsi?",
 					questionTypeRepository.findByType("Open Text").get(0), null));
 
-			ARepo.save(new Answer("Pretty good", Long.valueOf(1)));
-			ARepo.save(new Answer("Terrible", Long.valueOf(1)));
-			ARepo.save(new Answer("Awesome", Long.valueOf(2)));
+			ARepo.save(new Answer("1. vuoden", Long.valueOf(1)));
+			ARepo.save(new Answer("2. vuoden", Long.valueOf(1)));
+			ARepo.save(new Answer("Tietojenkäsittelyn koulutus tradenomi (AMK)", Long.valueOf(2)));
 
 			log.info("One user to rule them all");
 			Kayttaja userAdmin = new Kayttaja("admin", "$2a$10$0MMwY.IQqpsVc1jC8u7IJ.2rT8b0Cd3b3sfIBGV2zfgnPGtT4r0.C",
