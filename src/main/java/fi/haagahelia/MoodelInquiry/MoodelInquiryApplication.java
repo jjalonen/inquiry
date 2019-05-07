@@ -41,9 +41,9 @@ public class MoodelInquiryApplication {
 //			responseOptions.add("Tietojenkäsittelyn koulutus tradenomi (AMK)");
 //			responseOptions.add("Englanninkieliset amk-tutkinnot");
 //
-			questionTypeRepository.save(new QuestionType("Radio"));
-			questionTypeRepository.save(new QuestionType("Open Text"));
-			questionTypeRepository.save(new QuestionType("Select"));
+//			questionTypeRepository.save(new QuestionType("Radio"));
+//			questionTypeRepository.save(new QuestionType("Open Text"));
+//			questionTypeRepository.save(new QuestionType("Select"));
 //
 //			List<String> question1ResponseOptions = new ArrayList<>();
 //			question1ResponseOptions.add("1.vuoden");
@@ -73,10 +73,10 @@ public class MoodelInquiryApplication {
 //			ARepo.save(new AnswerForm(answers));
 //			ARepo.save(new AnswerForm(new Answer(Long.valueOf(1), "Aivan täydellinen"), new Answer(Long.valueOf(2), "Ihan okke")));
 //
-			log.info("One user to rule them all");
-			Kayttaja userAdmin = new Kayttaja("admin", "$2a$10$0MMwY.IQqpsVc1jC8u7IJ.2rT8b0Cd3b3sfIBGV2zfgnPGtT4r0.C",
-					"ADMIN");
-			urepository.save(userAdmin);
+//			log.info("One user to rule them all");
+//			Kayttaja userAdmin = new Kayttaja("admin", "$2a$10$0MMwY.IQqpsVc1jC8u7IJ.2rT8b0Cd3b3sfIBGV2zfgnPGtT4r0.C",
+//					"ADMIN");
+//			urepository.save(userAdmin);
 		};
 	}
 
