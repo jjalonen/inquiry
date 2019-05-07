@@ -41,9 +41,9 @@ public class MoodelInquiryApplication {
 //			responseOptions.add("Tietojenkäsittelyn koulutus tradenomi (AMK)");
 //			responseOptions.add("Englanninkieliset amk-tutkinnot");
 //
-//			questionTypeRepository.save(new QuestionType("Radio"));
-//			questionTypeRepository.save(new QuestionType("Open Text"));
-//			questionTypeRepository.save(new QuestionType("Select"));
+			questionTypeRepository.save(new QuestionType("Radio"));
+			questionTypeRepository.save(new QuestionType("Open Text"));
+			questionTypeRepository.save(new QuestionType("Select"));
 //
 //			List<String> question1ResponseOptions = new ArrayList<>();
 //			question1ResponseOptions.add("1.vuoden");
