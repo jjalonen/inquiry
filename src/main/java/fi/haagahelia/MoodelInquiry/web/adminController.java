@@ -7,10 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import fi.haagahelia.MoodelInquiry.domain.AnswerRepository;
-import fi.haagahelia.MoodelInquiry.domain.Question;
-import fi.haagahelia.MoodelInquiry.domain.QuestionRepository;
-import fi.haagahelia.MoodelInquiry.domain.QuestionTypeRepository;
+import fi.haagahelia.MoodelInquiry.domain.*;
 
 @Controller
 public class adminController {
@@ -19,7 +16,7 @@ public class adminController {
 	private QuestionRepository qRepository;
 	
 	@Autowired
-	private AnswerRepository aRepository;
+	private AnswerFormRepository aRepository;
 	
 	@Autowired
 	private QuestionTypeRepository typeRepository;

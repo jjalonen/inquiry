@@ -4,20 +4,26 @@ import javax.persistence.*;
 
 @Entity
 public class Answer {
-
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	private String answer;
 	
-	@JoinColumn(name = "questionId", nullable = false)
 	private Long questionId;
+	private String answer;
 	
 	public Answer() {}
 	
-	public Answer(String answer, Long questionId) {
-		super();
+	public Answer(Long questionId, String answer) {
+		this.questionId = questionId;
 		this.answer = answer;
+	}
+
+	public Long getQuestionId() {
+		return questionId;
+	}
+
+	public void setQuestionId(Long questionId) {
 		this.questionId = questionId;
 	}
 
@@ -27,6 +33,5 @@ public class Answer {
 
 	public void setAnswer(String answer) {
 		this.answer = answer;
-	}
-	
+	}	
 }
