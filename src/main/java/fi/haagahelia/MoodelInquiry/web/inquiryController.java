@@ -1,5 +1,6 @@
 package fi.haagahelia.MoodelInquiry.web;
 
+import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
 
@@ -27,6 +28,14 @@ public class inquiryController {
 	
 	@RequestMapping(value="/open/questions", method = RequestMethod.GET)
 	public @ResponseBody List<Question> GetQuestionsREST() {
+		List<Question> questions = (List<Question>) QRepo.findAll();
+		Iterator<Question> it = questions.iterator();
+		while(it.hasNext()) {
+			Question question  = it.next();
+			if(question.getResponseOptions().get(0).equals("")) {
+				question.setResponseOptions(null);
+			}
+		}
 		return (List<Question>) QRepo.findAll();
 	}
 	
