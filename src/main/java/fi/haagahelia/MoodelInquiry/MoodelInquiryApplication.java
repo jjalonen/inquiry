@@ -58,20 +58,17 @@ public class MoodelInquiryApplication {
 //					questionTypeRepository.findByType("Select").get(0), responseOptions));
 //			QRepo.save(new Question(Long.valueOf(3), "Miten moodle toimii mielestäsi?",
 //					questionTypeRepository.findByType("Open Text").get(0), null));
-//
-//			ARepo.save(new Answer("1. vuoden", Long.valueOf(1)));
-//			ARepo.save(new Answer("2. vuoden", Long.valueOf(1)));
-//			ARepo.save(new Answer("Tietojenkäsittelyn koulutus tradenomi (AMK)", Long.valueOf(2)));
-//			
-//			log.info("Saving some answers");
-//			List<Answer> answers = new ArrayList<>();
-//			answers.add(new Answer(Long.valueOf(1), "ihan ok"));
-//			answers.add(new Answer(Long.valueOf(2), "hyvin huono"));
-//
-//			
-//			
-//			ARepo.save(new AnswerForm(answers));
-//			ARepo.save(new AnswerForm(new Answer(Long.valueOf(1), "Aivan täydellinen"), new Answer(Long.valueOf(2), "Ihan okke")));
+
+			log.info("Saving some answers");
+			List<Answer> answers = new ArrayList<>();
+			answers.add(new Answer(Long.valueOf(1), "1"));
+			answers.add(new Answer(Long.valueOf(5), "3 Neutraali"));
+
+			AnswerForm form = new AnswerForm(answers);
+			
+			ARepo.save(form);
+			
+//			ARepo.save(new AnswerForm(new Answer(Long.valueOf(1), "1.vuoden"), new Answer(Long.valueOf(2), "Ihan okke")));
 //
 //			log.info("One user to rule them all");
 //			Kayttaja userAdmin = new Kayttaja("admin", "$2a$10$0MMwY.IQqpsVc1jC8u7IJ.2rT8b0Cd3b3sfIBGV2zfgnPGtT4r0.C",
