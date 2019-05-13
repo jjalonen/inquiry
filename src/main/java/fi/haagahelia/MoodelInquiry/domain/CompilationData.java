@@ -55,7 +55,9 @@ public class CompilationData {
 				if (answer.getQuestionId() == 5) {
 					System.out.println("questionId is 5");
 					
-					if(answer.getAnswer().equals("3 Neutraali")) {
+					//there are some answers from the dev stage
+					//this makes them not break the code
+					if(answer.getAnswer().length() > 1) {
 						answer.setAnswer("3");
 					}
 					
