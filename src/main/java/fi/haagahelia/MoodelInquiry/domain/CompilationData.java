@@ -58,7 +58,9 @@ public class CompilationData {
 					if(answer.getAnswer().length() > 1) {
 						answer.setAnswer("3");
 					}
-					System.out.println(answer.getAnswer());
+					System.out.println("GET ANSWER() " + answer.getAnswer());
+					System.out.println(answer.toString());
+					
 					switch (answer.getAnswer()) {
 					case "1":
 						answer1++;
@@ -81,11 +83,6 @@ public class CompilationData {
 				}
 			}
 		}
-		System.out.println(answer1 / StudentAnswersByYear.size() * 100);
-		System.out.println(answer2 / StudentAnswersByYear.size() * 100);
-		System.out.println(answer3 / StudentAnswersByYear.size() * 100);
-		System.out.println(answer4 / StudentAnswersByYear.size() * 100);
-		System.out.println(answer5 / StudentAnswersByYear.size() * 100);
 		
 		int one = answer1 / StudentAnswersByYear.size() * 100;
 		int two = answer2 / StudentAnswersByYear.size() * 100;
