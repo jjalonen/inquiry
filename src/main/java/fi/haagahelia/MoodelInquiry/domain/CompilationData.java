@@ -24,11 +24,11 @@ public class CompilationData {
 
 	private PercentagesByYear calculateYearAnswerPecentages(List<AnswerForm> answers, String year) {
 		List<AnswerForm> StudentAnswersByYear = new ArrayList<>();
-		int answer1 = 0;
-		int answer2 = 0;
-		int answer3 = 0;
-		int answer4 = 0;
-		int answer5 = 0;
+		double answer1 = 0;
+		double answer2 = 0;
+		double answer3 = 0;
+		double answer4 = 0;
+		double answer5 = 0;
 		
 		//find all answerForms with the given study year
 		for (int i = 0; i < answers.size(); i++) {
@@ -95,19 +95,19 @@ public class CompilationData {
 		System.out.println("WHOLE CALCULATION IS(for answer2)with () " + (answer2 / StudentAnswersByYear.size()) * 100);
 		
 		
-		int one = answer1 / StudentAnswersByYear.size() * 100;
-		int two = answer2 / StudentAnswersByYear.size() * 100;
-		int three = answer3 / StudentAnswersByYear.size() * 100;
-		int four = answer4 / StudentAnswersByYear.size() * 100;
-		int five = answer5 / StudentAnswersByYear.size() * 100;
+		double one = answer1 / StudentAnswersByYear.size() * 100;
+		double two = answer2 / StudentAnswersByYear.size() * 100;
+		double three = answer3 / StudentAnswersByYear.size() * 100;
+		double four = answer4 / StudentAnswersByYear.size() * 100;
+		double five = answer5 / StudentAnswersByYear.size() * 100;
 		
 		System.out.println(one + " " + two + " " + three + " " + four + " " + five);
 		//calculate percentages and parse to Strings
-		String answer1Percentage = Integer.toString(one) + " %";
-		String answer2Percentage = Integer.toString(two) + " %";
-		String answer3Percentage = Integer.toString(three) + " %";
-		String answer4Percentage = Integer.toString(four) + " %";
-		String answer5Percentage = Integer.toString(five) + " %";
+		String answer1Percentage = Double.toString(one) + " %";
+		String answer2Percentage = Double.toString(two) + " %";
+		String answer3Percentage = Double.toString(three) + " %";
+		String answer4Percentage = Double.toString(four) + " %";
+		String answer5Percentage = Double.toString(five) + " %";
 		
 		PercentagesByYear percentagesByYear = new PercentagesByYear(answer1Percentage, answer2Percentage, answer3Percentage, answer4Percentage, answer5Percentage);
 		return percentagesByYear;
