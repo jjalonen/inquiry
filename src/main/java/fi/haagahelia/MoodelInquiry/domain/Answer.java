@@ -27,7 +27,7 @@ public class Answer {
 		this.questionId = questionId;
 	}
 
-	public String getAnswer() {
+	public String getAnswerString() {
 		return answer;
 	}
 

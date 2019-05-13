@@ -38,7 +38,7 @@ public class CompilationData {
 			while (it.hasNext()) {
 				Answer answer = it.next();
 
-				if (answer.getQuestionId() == 1 && answer.getAnswer().equals(year)) {
+				if (answer.getQuestionId() == 1 && answer.getAnswerString().equals(year)) {
 					StudentAnswersByYear.add(answers.get(i));
 				}
 			}
@@ -55,29 +55,35 @@ public class CompilationData {
 					
 					//there are some answers from the dev stage
 					//this makes them not break the code
-					if(answer.getAnswer().length() > 1) {
+					if(answer.getAnswerString().length() > 1) {
 						answer.setAnswer("3");
 					}
-					System.out.println("GET ANSWER() " + answer.getAnswer());
+					System.out.println("GET ANSWER() " + answer.getAnswerString());
 					System.out.println(answer.toString());
-					
-					switch (answer.getAnswer()) {
+					String str = answer.getAnswerString();
+					switch (str) {
 					case "1":
 						answer1++;
+						System.out.println("case 1 called");
 						break;
 					case "2":
 						answer2++;
+						System.out.println("case 2 called");
 						break;
 					case "3":
 						answer3++;
+						System.out.println("case 3 called");
 						break;
 					case "4":
 						answer4++;
+						System.out.println("case 4 called");
 						break;
 					case "5":
 						answer5++;
+						System.out.println("case 5 called");
 						break;
 					default:
+						System.out.println("default");
 						break;
 					}
 				}
