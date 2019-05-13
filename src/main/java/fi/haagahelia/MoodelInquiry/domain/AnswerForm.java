@@ -15,10 +15,6 @@ public class AnswerForm {
 	
 	@OneToMany  (cascade=CascadeType.ALL)
 	private List<Answer> answers;
-//	private Answer answerToQuestion2;
-	
-//	@JoinColumn(name = "questionId", nullable = false)
-//	private Long questionId;
 	
 	public AnswerForm() {}
 	

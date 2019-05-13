@@ -7,7 +7,6 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -49,18 +48,21 @@ public class inquiryController {
 		return (List<AnswerForm>) Arepo.findAll();
 	}
 	
-//	@RequestMapping(value="/open/answer/{id}", method = RequestMethod.GET)
-//	public @ResponseBody List<AnswerForm> GetAnswersByQuestionIdREST(@PathVariable("id") Long id) {
-//		return (List<AnswerForm>) Arepo.findById(id);
-//	}
-	
 	@RequestMapping(value="/add/question", method = RequestMethod.POST)
 	public void addQuestion(@RequestBody Question question) {
 		QRepo.save(question);
 	}
 	@ResponseStatus(value = HttpStatus.OK)
 	@RequestMapping(value="/open/add/answer", method = RequestMethod.POST)
-	public void addAnswer(@RequestBody AnswerForm answer) {
-		Arepo.save(answer);
+	public void addAnswer(@RequestBody AnswerForm answerForm) {
+		Arepo.save(answerForm);
+	}
+	
+	@RequestMapping(value="/open/data", method = RequestMethod.GET)
+	public @ResponseBody CompilationData getCompilationData() {
+		CompilationData data = new CompilationData();
+		
+		return data;
+		
 	}
 }
