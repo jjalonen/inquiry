@@ -2,6 +2,8 @@ package fi.haagahelia.MoodelInquiry;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import java.util.List;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,5 +37,20 @@ public class UserRepositoryTEST {
 		Kayttaja kayttajat = URepo.findByUsername("admin");
 		
 		kayttajat.getRole().equals("admin");
+	}
+	
+	@Test
+	public void deleteUser() {
+		
+		Kayttaja kayttajaTest = new Kayttaja("Tester", "$2a$10$mxNSGDPJieMK3c4bCezsEOzxjrpRDvBZR1eQaQPVcceAEdvGO0iVS", "user");
+		URepo.save(kayttajaTest);
+		
+		Kayttaja kayttaja = URepo.findByUsername("Tester");
+		URepo.delete(kayttaja);
+		
+		Kayttaja editedKayttaja = URepo.findByUsername("Tester");
+		assertThat(editedKayttaja).isNull();
+		
+		
 	}
 }

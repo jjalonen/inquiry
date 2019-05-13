@@ -41,4 +41,17 @@ public class QuestionRepositoryTypeTEST {
 		
 		assertThat(Qtype.getType()).isNotNull();
 	}
+	
+	@Test
+	public void deleteType() {
+		QuestionType Qtype = new QuestionType("SelectTEST");
+		QTRepo.save(Qtype);
+		
+		List<QuestionType> QTypes = QTRepo.findByType("SelectTEST");
+		QTRepo.delete(QTypes.get(0));
+		
+		List<QuestionType> editedQT = QTRepo.findByType("SelectTEST");
+		assertThat(editedQT).isEmpty();
+	}
+	
 }
