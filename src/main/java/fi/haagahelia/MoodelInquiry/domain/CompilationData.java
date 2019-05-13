@@ -64,31 +64,36 @@ public class CompilationData {
 					switch (str) {
 					case "1":
 						answer1++;
-						System.out.println("case 1 called");
+//						System.out.println("case 1 called");
 						break;
 					case "2":
 						answer2++;
-						System.out.println("case 2 called");
+//						System.out.println("case 2 called");
 						break;
 					case "3":
 						answer3++;
-						System.out.println("case 3 called");
+//						System.out.println("case 3 called");
 						break;
 					case "4":
 						answer4++;
-						System.out.println("case 4 called");
+//						System.out.println("case 4 called");
 						break;
 					case "5":
 						answer5++;
-						System.out.println("case 5 called");
+//						System.out.println("case 5 called");
 						break;
 					default:
-						System.out.println("default");
+//						System.out.println("default");
 						break;
 					}
 				}
 			}
 		}
+		System.out.println("LIST SIZE IS " + StudentAnswersByYear.size());
+		System.out.println("LIST SIZE * 100 IS " + StudentAnswersByYear.size() * 100);
+		System.out.println("WHOLE CALCULATION IS(for answer2) " + answer2 / StudentAnswersByYear.size() * 100);
+		System.out.println("WHOLE CALCULATION IS(for answer2)with () " + (answer2 / StudentAnswersByYear.size()) * 100);
+		
 		
 		int one = answer1 / StudentAnswersByYear.size() * 100;
 		int two = answer2 / StudentAnswersByYear.size() * 100;
