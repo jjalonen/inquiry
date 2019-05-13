@@ -64,10 +64,10 @@ public class MoodelInquiryApplication {
 //			answers.add(new Answer(Long.valueOf(1), "2"));
 //			answers.add(new Answer(Long.valueOf(5), "5"));
 //
-//			AnswerForm form = new AnswerForm(answers);
+//			AnswerForm form = new AnswerForm(null);
 //			
 //			ARepo.save(form);
-			
+//			
 //			ARepo.save(new AnswerForm(new Answer(Long.valueOf(1), "1.vuoden"), new Answer(Long.valueOf(2), "Ihan okke")));
 //
 //			log.info("One user to rule them all");

@@ -47,10 +47,10 @@ public class CompilationData {
 		for (int i = 0; i < StudentAnswersByYear.size(); i++) {	
 			List<Answer> subAnswers = StudentAnswersByYear.get(i).getAnswers();
 			Iterator<Answer> it = subAnswers.iterator();
-
+			
 			while (it.hasNext()) {
 				Answer answer = it.next();
-				
+		
 				if (answer.getQuestionId() == 5) {
 					switch (answer.getAnswer()) {
 					case ("1"):
@@ -74,7 +74,6 @@ public class CompilationData {
 				}
 			}
 		}
-		System.out.println(answer1 + " " + answer2);
 		//calculate percentages and parse to Strings
 		String answer1Percentage = Integer.toString(answer1 / StudentAnswersByYear.size() * 100) + "%";
 		String answer2Percentage = Integer.toString(answer2 / StudentAnswersByYear.size() * 100) + "%";

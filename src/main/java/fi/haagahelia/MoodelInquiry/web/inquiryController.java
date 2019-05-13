@@ -61,6 +61,17 @@ public class inquiryController {
 	@RequestMapping(value="/open/data", method = RequestMethod.GET)
 	public @ResponseBody CompilationData getCompilationData() {
 		List<AnswerForm> answers = (List<AnswerForm>) Arepo.findAll();
+		
+		Iterator<AnswerForm> it = answers.iterator();
+		
+		//delete all empty answers
+		while(it.hasNext()) {
+			AnswerForm form = it.next();
+			if(form.getAnswers().isEmpty()) {
+				Arepo.deleteById(form.getId());
+			}
+		}
+		
 		CompilationData data = new CompilationData(answers);	
 		return data;
 	}
