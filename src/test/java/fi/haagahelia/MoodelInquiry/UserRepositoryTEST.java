@@ -29,4 +29,11 @@ public class UserRepositoryTEST {
 		assertThat(kayttaja.getId()).isNotNull();
 		
 	}
+	
+	@Test
+	public void findByUsername() {
+		Kayttaja kayttajat = URepo.findByUsername("admin");
+		
+		kayttajat.getRole().equals("admin");
+	}
 }
