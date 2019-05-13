@@ -54,23 +54,24 @@ public class CompilationData {
 		
 				if (answer.getQuestionId() == 5) {
 					System.out.println("questionId is 5");
-					switch (answer.getAnswer()) {
-					case ("1"):
+					switch (Integer.parseInt(answer.getAnswer())) {
+					case (1):
 						answer1++;
 						break;
-					case ("2"):
+					case (2):
 						answer2++;
 						break;
-					case ("3"):
+					case (3):
 						answer3++;
 						break;
-					case ("4"):
+					case (4):
 						answer4++;
 						break;
-					case ("5"):
+					case (5):
 						answer5++;
 						break;
 					default:
+						System.out.println("default got called");
 						break;
 					}
 				}
