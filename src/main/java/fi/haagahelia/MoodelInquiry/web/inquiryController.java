@@ -52,21 +52,16 @@ public class inquiryController {
 	public void addQuestion(@RequestBody Question question) {
 		QRepo.save(question);
 	}
-//	@ResponseStatus(value = HttpStatus.OK)
+
 	@RequestMapping(value="/open/add/answer", method = RequestMethod.POST)
 	public void addAnswer(@RequestBody AnswerForm answerForm) {
-		System.out.println(answerForm.toString());
-		System.out.println("This is degub line *******************************");
 		Arepo.save(answerForm);
 	}
 	
 	@RequestMapping(value="/open/data", method = RequestMethod.GET)
 	public @ResponseBody CompilationData getCompilationData() {
 		List<AnswerForm> answers = (List<AnswerForm>) Arepo.findAll();
-		
-		CompilationData data = new CompilationData(answers);
-		
+		CompilationData data = new CompilationData(answers);	
 		return data;
-		
 	}
 }
