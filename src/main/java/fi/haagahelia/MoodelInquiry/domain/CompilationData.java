@@ -29,8 +29,8 @@ public class CompilationData {
 		double answer3 = 0;
 		double answer4 = 0;
 		double answer5 = 0;
-		
-		//find all answerForms with the given study year
+
+		// find all answerForms with the given study year
 		for (int i = 0; i < answers.size(); i++) {
 			List<Answer> subAnswers = answers.get(i).getAnswers();
 			Iterator<Answer> it = subAnswers.iterator();
@@ -42,74 +42,55 @@ public class CompilationData {
 					StudentAnswersByYear.add(answers.get(i));
 				}
 			}
-		}	
-		//go through all the answers for the given year
-		for (int i = 0; i < StudentAnswersByYear.size(); i++) {	
+		}
+		// go through all the answers for the given year
+		for (int i = 0; i < StudentAnswersByYear.size(); i++) {
 			List<Answer> subAnswers = StudentAnswersByYear.get(i).getAnswers();
 			Iterator<Answer> it = subAnswers.iterator();
-			
+
 			while (it.hasNext()) {
 				Answer answer = it.next();
-		
+
 				if (answer.getQuestionId() == 5) {
-					
-					//there are some answers from the dev stage
-					//this makes them not break the code
-					if(answer.getAnswerString().length() > 1) {
+
+					// there are some answers from the dev stage
+					// this makes them not break the code
+					if (answer.getAnswerString().length() > 1) {
 						answer.setAnswer("3");
 					}
-					System.out.println("GET ANSWER() " + answer.getAnswerString());
-					System.out.println(answer.toString());
+					
 					String str = answer.getAnswerString();
 					switch (str) {
 					case "1":
 						answer1++;
-//						System.out.println("case 1 called");
 						break;
 					case "2":
 						answer2++;
-//						System.out.println("case 2 called");
 						break;
 					case "3":
 						answer3++;
-//						System.out.println("case 3 called");
 						break;
 					case "4":
 						answer4++;
-//						System.out.println("case 4 called");
 						break;
 					case "5":
 						answer5++;
-//						System.out.println("case 5 called");
 						break;
 					default:
-//						System.out.println("default");
 						break;
 					}
 				}
 			}
 		}
-		System.out.println("LIST SIZE IS " + StudentAnswersByYear.size());
-		System.out.println("LIST SIZE * 100 IS " + StudentAnswersByYear.size() * 100);
-		System.out.println("WHOLE CALCULATION IS(for answer2) " + answer2 / StudentAnswersByYear.size() * 100);
-		System.out.println("WHOLE CALCULATION IS(for answer2)with () " + (answer2 / StudentAnswersByYear.size()) * 100);
-		
-		
-		double one = answer1 / StudentAnswersByYear.size() * 100;
-		double two = answer2 / StudentAnswersByYear.size() * 100;
-		double three = answer3 / StudentAnswersByYear.size() * 100;
-		double four = answer4 / StudentAnswersByYear.size() * 100;
-		double five = answer5 / StudentAnswersByYear.size() * 100;
-		
-		System.out.println(one + " " + two + " " + three + " " + four + " " + five);
-		//calculate percentages and parse to Strings
-		String answer1Percentage = Double.toString(one) + " %";
-		String answer2Percentage = Double.toString(two) + " %";
-		String answer3Percentage = Double.toString(three) + " %";
-		String answer4Percentage = Double.toString(four) + " %";
-		String answer5Percentage = Double.toString(five) + " %";
-		
-		PercentagesByYear percentagesByYear = new PercentagesByYear(answer1Percentage, answer2Percentage, answer3Percentage, answer4Percentage, answer5Percentage);
+		// calculate percentages and parse to Strings
+		String answer1Percentage = Double.toString(answer1 / StudentAnswersByYear.size() * 100) + " %";
+		String answer2Percentage = Double.toString(answer2 / StudentAnswersByYear.size() * 100) + " %";
+		String answer3Percentage = Double.toString(answer3 / StudentAnswersByYear.size() * 100) + " %";
+		String answer4Percentage = Double.toString(answer4 / StudentAnswersByYear.size() * 100) + " %";
+		String answer5Percentage = Double.toString(answer5 / StudentAnswersByYear.size() * 100) + " %";
+
+		PercentagesByYear percentagesByYear = new PercentagesByYear(answer1Percentage, answer2Percentage,
+				answer3Percentage, answer4Percentage, answer5Percentage);
 		return percentagesByYear;
 	}
 
