@@ -55,6 +55,8 @@ public class inquiryController {
 //	@ResponseStatus(value = HttpStatus.OK)
 	@RequestMapping(value="/open/add/answer", method = RequestMethod.POST)
 	public void addAnswer(@RequestBody AnswerForm answerForm) {
+		System.out.println(answerForm.toString());
+		System.out.println("This is degub line *******************************");
 		Arepo.save(answerForm);
 	}
 	

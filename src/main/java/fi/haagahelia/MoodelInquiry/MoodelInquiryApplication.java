@@ -59,14 +59,14 @@ public class MoodelInquiryApplication {
 //			QRepo.save(new Question(Long.valueOf(3), "Miten moodle toimii mielestäsi?",
 //					questionTypeRepository.findByType("Open Text").get(0), null));
 
-			log.info("Saving some answers");
-			List<Answer> answers = new ArrayList<>();
-			answers.add(new Answer(Long.valueOf(1), "1"));
-			answers.add(new Answer(Long.valueOf(5), "3 Neutraali"));
-
-			AnswerForm form = new AnswerForm(answers);
-			
-			ARepo.save(form);
+//			log.info("Saving some answers");
+//			List<Answer> answers = new ArrayList<>();
+//			answers.add(new Answer(Long.valueOf(1), "1"));
+//			answers.add(new Answer(Long.valueOf(5), "3 Neutraali"));
+//
+//			AnswerForm form = new AnswerForm(answers);
+//			
+//			ARepo.save(form);
 			
 //			ARepo.save(new AnswerForm(new Answer(Long.valueOf(1), "1.vuoden"), new Answer(Long.valueOf(2), "Ihan okke")));
 //
