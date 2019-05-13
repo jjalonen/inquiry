@@ -39,6 +39,7 @@ public class CompilationData {
 				Answer answer = it.next();
 
 				if (answer.getQuestionId() == 1 && answer.getAnswer().equals(year)) {
+					System.out.println("can find answers for given year");
 					StudentAnswersByYear.add(answers.get(i));
 				}
 			}
@@ -52,6 +53,7 @@ public class CompilationData {
 				Answer answer = it.next();
 		
 				if (answer.getQuestionId() == 5) {
+					System.out.println("questionId is 5");
 					switch (answer.getAnswer()) {
 					case ("1"):
 						answer1++;
@@ -80,6 +82,12 @@ public class CompilationData {
 		String answer3Percentage = Integer.toString(answer3 / StudentAnswersByYear.size() * 100) + "%";
 		String answer4Percentage = Integer.toString(answer4 / StudentAnswersByYear.size() * 100) + "%";
 		String answer5Percentage = Integer.toString(answer5 / StudentAnswersByYear.size() * 100) + "%";
+		
+		System.out.println(answer1Percentage);
+		System.out.println(answer2Percentage);
+		System.out.println(answer3Percentage);
+		System.out.println(answer4Percentage);
+		System.out.println(answer5Percentage);
 		
 		PercentagesByYear percentagesByYear = new PercentagesByYear(answer1Percentage, answer2Percentage, answer3Percentage, answer4Percentage, answer5Percentage);
 		return percentagesByYear;

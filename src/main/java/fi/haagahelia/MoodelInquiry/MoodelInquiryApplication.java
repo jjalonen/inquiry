@@ -64,7 +64,7 @@ public class MoodelInquiryApplication {
 //			answers.add(new Answer(Long.valueOf(1), "2"));
 //			answers.add(new Answer(Long.valueOf(5), "5"));
 //
-//			AnswerForm form = new AnswerForm(null);
+//			AnswerForm form = new AnswerForm(answers);
 //			
 //			ARepo.save(form);
 //			
