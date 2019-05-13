@@ -54,6 +54,11 @@ public class CompilationData {
 		
 				if (answer.getQuestionId() == 5) {
 					System.out.println("questionId is 5");
+					
+					if(answer.getAnswer().equals("3 Neutraali")) {
+						answer.setAnswer("3");
+					}
+					
 					switch (Integer.parseInt(answer.getAnswer())) {
 					case (1):
 						answer1++;
