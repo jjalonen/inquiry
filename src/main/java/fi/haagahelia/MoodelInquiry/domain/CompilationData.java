@@ -39,7 +39,6 @@ public class CompilationData {
 				Answer answer = it.next();
 
 				if (answer.getQuestionId() == 1 && answer.getAnswer().equals(year)) {
-					System.out.println("can find answers for given year");
 					StudentAnswersByYear.add(answers.get(i));
 				}
 			}
@@ -53,7 +52,6 @@ public class CompilationData {
 				Answer answer = it.next();
 		
 				if (answer.getQuestionId() == 5) {
-					System.out.println("questionId is 5");
 					
 					//there are some answers from the dev stage
 					//this makes them not break the code
@@ -78,24 +76,26 @@ public class CompilationData {
 						answer5++;
 						break;
 					default:
-						System.out.println("default got called");
 						break;
 					}
 				}
 			}
 		}
-		//calculate percentages and parse to Strings
-		String answer1Percentage = Integer.toString(answer1 / StudentAnswersByYear.size() * 100) + "%";
-		String answer2Percentage = Integer.toString(answer2 / StudentAnswersByYear.size() * 100) + "%";
-		String answer3Percentage = Integer.toString(answer3 / StudentAnswersByYear.size() * 100) + "%";
-		String answer4Percentage = Integer.toString(answer4 / StudentAnswersByYear.size() * 100) + "%";
-		String answer5Percentage = Integer.toString(answer5 / StudentAnswersByYear.size() * 100) + "%";
+		System.out.println(answer1 / StudentAnswersByYear.size() * 100);
+		System.out.println(answer2 / StudentAnswersByYear.size() * 100);
+		System.out.println(answer3 / StudentAnswersByYear.size() * 100);
+		System.out.println(answer4 / StudentAnswersByYear.size() * 100);
+		System.out.println(answer5 / StudentAnswersByYear.size() * 100);
 		
-		System.out.println(answer1Percentage);
-		System.out.println(answer2Percentage);
-		System.out.println(answer3Percentage);
-		System.out.println(answer4Percentage);
-		System.out.println(answer5Percentage);
+		int one = answer1 / StudentAnswersByYear.size() * 100;
+		int two = answer2 / StudentAnswersByYear.size() * 100;
+		int three = answer3 / StudentAnswersByYear.size() * 100;
+		//calculate percentages and parse to Strings
+		String answer1Percentage = Integer.toString(one) + " %";
+		String answer2Percentage = Integer.toString(two) + " %";
+		String answer3Percentage = Integer.toString(three) + " %";
+		String answer4Percentage = Integer.toString(answer4 / StudentAnswersByYear.size() * 100) + " %";
+		String answer5Percentage = Integer.toString(answer5 / StudentAnswersByYear.size() * 100) + " %";
 		
 		PercentagesByYear percentagesByYear = new PercentagesByYear(answer1Percentage, answer2Percentage, answer3Percentage, answer4Percentage, answer5Percentage);
 		return percentagesByYear;
