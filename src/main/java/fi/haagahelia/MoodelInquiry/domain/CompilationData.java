@@ -83,7 +83,7 @@ public class CompilationData {
 				}
 			}
 		}
-		DecimalFormat df = new DecimalFormat("00,00");
+		DecimalFormat df = new DecimalFormat("00");
 		
 		// calculate percentages and parse to Strings
 		String answer1Percentage = df.format(answer1 / StudentAnswersByYear.size() * 100) + " %";
