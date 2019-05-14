@@ -1,5 +1,6 @@
 package fi.haagahelia.MoodelInquiry.domain;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -82,12 +83,14 @@ public class CompilationData {
 				}
 			}
 		}
+		DecimalFormat df = new DecimalFormat("00,00");
+		
 		// calculate percentages and parse to Strings
-		String answer1Percentage = Double.toString(answer1 / StudentAnswersByYear.size() * 100) + " %";
-		String answer2Percentage = Double.toString(answer2 / StudentAnswersByYear.size() * 100) + " %";
-		String answer3Percentage = Double.toString(answer3 / StudentAnswersByYear.size() * 100) + " %";
-		String answer4Percentage = Double.toString(answer4 / StudentAnswersByYear.size() * 100) + " %";
-		String answer5Percentage = Double.toString(answer5 / StudentAnswersByYear.size() * 100) + " %";
+		String answer1Percentage = df.format(answer1 / StudentAnswersByYear.size() * 100) + " %";
+		String answer2Percentage = df.format(answer2 / StudentAnswersByYear.size() * 100) + " %";
+		String answer3Percentage = df.format(answer3 / StudentAnswersByYear.size() * 100) + " %";
+		String answer4Percentage = df.format(answer4 / StudentAnswersByYear.size() * 100) + " %";
+		String answer5Percentage = df.format(answer5 / StudentAnswersByYear.size() * 100) + " %";
 
 		PercentagesByYear percentagesByYear = new PercentagesByYear(answer1Percentage, answer2Percentage,
 				answer3Percentage, answer4Percentage, answer5Percentage);
